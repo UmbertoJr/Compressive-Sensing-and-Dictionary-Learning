@@ -3,6 +3,7 @@
 
 ---
 
+
 <h1 id="simple-introduction-to-compressive-sensing-and-dictionary-learning-on-python">Simple Introduction to Compressive Sensing and Dictionary Learning on Python</h1>
 <p>An interesting Theory that recently I got to study is Compressive Sensing and Dictionary Learning, and here I will try to share some intuition that I had during my studies trying to keep thinghs easy and practical.</p>
 <h2 id="what-is-compressive-sensing">What is Compressive Sensing?</h2>

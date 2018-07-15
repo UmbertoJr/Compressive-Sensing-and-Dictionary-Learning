@@ -22,7 +22,7 @@ if <span class="katex--inline"><span class="katex"><span class="katex-mathml"><m
 Then if we have that <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Φ</mi></mrow><annotation encoding="application/x-tex">\Phi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.68333em;"></span><span class="strut bottom" style="height: 0.68333em; vertical-align: 0em;"></span><span class="base"><span class="mord mathrm">Φ</span></span></span></span></span> is n-1 by n this system of equation will end on a line, and so on…<br>
 More dimentions we remove from the row then more dimentions we give to the hiper-plane that is solution of the equations!!!<br>
 So we could think that it seems that there is no single solution… but we should not forget that we want the solution to be the most sparse possible, and for this reason the solution exist and is only one.<br>
-<img src="https://drive.google.com/open?id=1K3skSWwfqoVf40ysE0BpHp3afiwioEd-" alt="Sparse space"></p>
+<img src="https://drive.google.com/drive/folders/1eahVHyBgEJz8R5r01k_bePZlqPL8pZiP" alt="Sparse space"></p>
 <p>At least since 0-norm is a NP-problem we transform the problem to convex using 1-norm</p>
-<p><img src="https://drive.google.com/open?id=17xo6mZxv7uNcv5JbJVHxw2o5N9gwFPhI" alt="Norm p with p < 1"></p>
+<p><img src="https://drive.google.com/drive/folders/1eahVHyBgEJz8R5r01k_bePZlqPL8pZiP" alt="Norm p with p < 1"></p>
 

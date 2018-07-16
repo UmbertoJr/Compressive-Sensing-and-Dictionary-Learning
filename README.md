@@ -21,8 +21,3 @@ So we could think that it seems that there is no single solution… but we shoul
 <p><img src="image/spaziosparso.png" alt="Sparse space"></p>
 <p>At least since 0-norm is a NP-problem we transform the problem to convex using 1-norm</p>
 <p><img src="image/normaP.png" alt="Norm p with p < 1"></p>
-
-<img src="/cgi-bin/mimetex.cgi?
-    x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}">
-    
-<a href="https://www.codecogs.com/eqnedit.php?latex=\Phi" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\Phi" title="\Phi" /></a>

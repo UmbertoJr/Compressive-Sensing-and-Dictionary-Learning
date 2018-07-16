@@ -21,4 +21,45 @@ So we could think that it seems that there is no single solution… but we shoul
 <p><img src="image/spaziosparso.png" alt="Sparse space"></p>
 <p>At least since 0-norm is a NP-problem we transform the problem to convex using 1-norm</p>
 <p><img src="image/normaP.png" alt="Norm p with p < 1"></p>
+<h3 id="but-under-wich-conditions-is-it-possible-the-unique-and-complete-recovery">But under wich conditions is it possible the unique and complete recovery?</h3>
+<blockquote>
+<p>Theorem:<br>
+Given <a href="https://www.codecogs.com/eqnedit.php?latex=A&amp;space;\in&amp;space;\mathbb{C}^{m&amp;space;\times&amp;space;N}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?A&amp;space;\in&amp;space;\mathbb{C}^{m&amp;space;\times&amp;space;N}" title="A \in \mathbb{C}^{m \times N}"></a>, the following properties are equivalent:<br>
+a) If <a href="https://www.codecogs.com/eqnedit.php?latex=A&amp;space;\cdot&amp;space;x&amp;space;=&amp;space;A&amp;space;\cdot&amp;space;z" target="_blank"><img src="https://latex.codecogs.com/gif.latex?A&amp;space;\cdot&amp;space;x&amp;space;=&amp;space;A&amp;space;\cdot&amp;space;z" title="A \cdot x = A \cdot z"></a> and both are s-sparse, then <a href="https://www.codecogs.com/eqnedit.php?latex=x&amp;space;=&amp;space;z" target="_blank"><img src="https://latex.codecogs.com/gif.latex?x&amp;space;=&amp;space;z" title="x = z"></a>.<br>
+b) The null-space of <a href="https://www.codecogs.com/eqnedit.php?latex=A" target="_blank"><img src="https://latex.codecogs.com/gif.latex?A" title="A"></a> does not contain any 2s-sparse vector other than the 0 vector<br>
+c) Every set of 2s columns of <a href="https://www.codecogs.com/eqnedit.php?latex=A" target="_blank"><img src="https://latex.codecogs.com/gif.latex?A" title="A"></a> is linearly independent</p>
+</blockquote>
+<h2 id="recovery-algorithms">Recovery algorithms</h2>
+<p>So up to now we talk about some theory, let’s start talk coding…</p>
+<center><b>Basis Pursuit</b> </center>
+<p>Consist in solve this simple convex problem:</p>
+<p>&nbsp;</p>
+<center>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\underset{x}{\text{minimize}}&amp;space;\quad&amp;space;||x||_1&amp;space;\\&amp;space;\text{subject&amp;space;to}&amp;space;\quad&amp;space;y&amp;space;=&amp;space;A&amp;space;\cdot&amp;space;x" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\underset{x}{\text{minimize}}&amp;space;\quad&amp;space;||x||_1&amp;space;\\&amp;space;\text{subject&amp;space;to}&amp;space;\quad&amp;space;y&amp;space;=&amp;space;A&amp;space;\cdot&amp;space;x" title="\underset{x}{\text{minimize}} \quad ||x||_1 \\ \text{subject to} \quad y = A \cdot x"></a>
+</center>
+<p>&nbsp;</p>
+<center><b>Lasso</b> </center>
+<p>Is the famous convex problem:</p>
+<center>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\underset{x}{\text{minimize}}&amp;space;\quad&amp;space;||y&amp;space;-&amp;space;A&amp;space;\cdot&amp;space;x||_2&amp;space;\\&amp;space;\text{subject&amp;space;to}&amp;space;\quad&amp;space;||x||_1&amp;space;\leq&amp;space;\tau" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\underset{x}{\text{minimize}}&amp;space;\quad&amp;space;||y&amp;space;-&amp;space;A&amp;space;\cdot&amp;space;x||_2&amp;space;\\&amp;space;\text{subject&amp;space;to}&amp;space;\quad&amp;space;||x||_1&amp;space;\leq&amp;space;\tau" title="\underset{x}{\text{minimize}} \quad ||y - A \cdot x||_2 \\ \text{subject to} \quad ||x||_1 \leq \tau"></a></center>
+<p>&nbsp;</p>
+<center><b>Orthogonal Matching Pursuit</b> </center>
+<p>It’s a greedy method that do the follow steps:</p>
+<ul>
+<li>
+<p>Initialization:  <a href="https://www.codecogs.com/eqnedit.php?latex=S^0&amp;space;=&amp;space;\emptyset,&amp;space;\quad&amp;space;x^0&amp;space;=&amp;space;0" target="_blank"><img src="https://latex.codecogs.com/gif.latex?S^0&amp;space;=&amp;space;\emptyset,&amp;space;\quad&amp;space;x^0&amp;space;=&amp;space;0" title="S^0 = \emptyset, \quad x^0 = 0"></a></p>
+</li>
+<li>
+<p>Repeat until a stopping criterion is met:</p>
+</li>
+</ul>
+<center>
+<a href="https://www.codecogs.com/eqnedit.php?latex=S^{n+1}&amp;space;=&amp;space;S^n&amp;space;\cup&amp;space;\{&amp;space;j_{n+1}\},&amp;space;\quad&amp;space;j_{n+1}=&amp;space;argmax\{|A^H(y-&amp;space;A\cdot&amp;space;x^n)|\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?S^{n+1}&amp;space;=&amp;space;S^n&amp;space;\cup&amp;space;\{&amp;space;j_{n+1}\},&amp;space;\quad&amp;space;j_{n+1}=&amp;space;argmax\{|A^H(y-&amp;space;A\cdot&amp;space;x^n)|\}" title="S^{n+1} = S^n \cup \{ j_{n+1}\}, \quad j_{n+1}= argmax\{|A^H(y- A\cdot x^n)|\}"></a>
+</center>
+<center>
+<a href="https://www.codecogs.com/eqnedit.php?latex=x^{n+1}&amp;space;=&amp;space;argmin_z\{|y&amp;space;-&amp;space;A&amp;space;\cdot&amp;space;z|_2&amp;space;,&amp;space;supp(z)&amp;space;\subset&amp;space;S^{n+1}\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?x^{n+1}&amp;space;=&amp;space;argmin_z\{|y&amp;space;-&amp;space;A&amp;space;\cdot&amp;space;z|_2&amp;space;,&amp;space;supp(z)&amp;space;\subset&amp;space;S^{n+1}\}" title="x^{n+1} = argmin_z\{|y - A \cdot z|_2 , supp(z) \subset S^{n+1}\}"></a>
+</center>
+<ul>
+<li>Output <a href="https://www.codecogs.com/eqnedit.php?latex=x^*&amp;space;=&amp;space;x^{n+1}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?x^*&amp;space;=&amp;space;x^{n+1}" title="x^* = x^{n+1}"></a></li>
+</ul>
 

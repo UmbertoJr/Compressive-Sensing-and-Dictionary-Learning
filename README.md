@@ -68,5 +68,5 @@ After this update D need to be renormalized to fit the constraints and this algo
 The implementation of this algorithm is taken by the paper <a href="http://www.di.ens.fr/sierra/pdfs/icml09.pdf">Online Dictionary Learning for Sparse Coding</a> by Julien Mairal, Francis Bach, Jean Ponce, Guillermo Sapiro.</p>
 <p><img src="image/OnlineAlgo.png" alt="online algorithm"></p>
 <p><img src="image/Dictionary_Update.png" alt="Dictionary update"></p>
-<p><em><strong>Thank you for reading and I remeber you to star my repo and see the <a href="https://github.com/UmbertoJr/Compressive_Sensing_and_Dictionary_Learning/blob/master/CompressiveSensing_and_DictionaryLearning.ipynb">jupyter notebook</a> on colab</strong></em></p>
+<p><em><strong>Thank you for reading and I remember you to star my repo and see the <a href="https://github.com/UmbertoJr/Compressive_Sensing_and_Dictionary_Learning/blob/master/CompressiveSensing_and_DictionaryLearning.ipynb">jupyter notebook</a> on colab</strong></em></p>
 
